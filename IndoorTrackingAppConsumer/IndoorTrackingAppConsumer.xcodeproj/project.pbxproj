@@ -13,6 +13,8 @@
 		1EE5092E24596DE700272D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5092C24596DE700272D84 /* Main.storyboard */; };
 		1EE5093024596DEB00272D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5092F24596DEB00272D84 /* Assets.xcassets */; };
 		1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5093124596DEB00272D84 /* LaunchScreen.storyboard */; };
+		1EE5093B24596F6C00272D84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */; };
+		9CCCAF64C6FC3721D8022A0F /* Pods_IndoorTrackingAppConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6735F1FD7934C7440780FB9 /* Pods_IndoorTrackingAppConsumer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		1EE5092F24596DEB00272D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EE5093224596DEB00272D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EE5093424596DEB00272D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97FD2B17673CBBD8FC092BD7 /* Pods-IndoorTrackingAppConsumer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingAppConsumer.release.xcconfig"; path = "Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer.release.xcconfig"; sourceTree = "<group>"; };
+		C582204BF0A35851126D8A6A /* Pods-IndoorTrackingAppConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingAppConsumer.debug.xcconfig"; path = "Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer.debug.xcconfig"; sourceTree = "<group>"; };
+		C6735F1FD7934C7440780FB9 /* Pods_IndoorTrackingAppConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndoorTrackingAppConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CCCAF64C6FC3721D8022A0F /* Pods_IndoorTrackingAppConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0451E8CF622A2F550599F67F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C582204BF0A35851126D8A6A /* Pods-IndoorTrackingAppConsumer.debug.xcconfig */,
+				97FD2B17673CBBD8FC092BD7 /* Pods-IndoorTrackingAppConsumer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1EE5091A24596DE700272D84 = {
 			isa = PBXGroup;
 			children = (
 				1EE5092524596DE700272D84 /* IndoorTrackingAppConsumer */,
 				1EE5092424596DE700272D84 /* Products */,
+				0451E8CF622A2F550599F67F /* Pods */,
+				8FDE1FEC8B27F2EBD28BD4D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +82,17 @@
 				1EE5092F24596DEB00272D84 /* Assets.xcassets */,
 				1EE5093124596DEB00272D84 /* LaunchScreen.storyboard */,
 				1EE5093424596DEB00272D84 /* Info.plist */,
+				1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */,
 			);
 			path = IndoorTrackingAppConsumer;
+			sourceTree = "<group>";
+		};
+		8FDE1FEC8B27F2EBD28BD4D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6735F1FD7934C7440780FB9 /* Pods_IndoorTrackingAppConsumer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EE5093724596DEB00272D84 /* Build configuration list for PBXNativeTarget "IndoorTrackingAppConsumer" */;
 			buildPhases = (
+				65D92D5721B885CFF04B76B8 /* [CP] Check Pods Manifest.lock */,
 				1EE5091F24596DE700272D84 /* Sources */,
 				1EE5092024596DE700272D84 /* Frameworks */,
 				1EE5092124596DE700272D84 /* Resources */,
+				4F377A9FDE226F8F9B55FF07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */,
+				1EE5093B24596F6C00272D84 /* GoogleService-Info.plist in Resources */,
 				1EE5093024596DEB00272D84 /* Assets.xcassets in Resources */,
 				1EE5092E24596DE700272D84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F377A9FDE226F8F9B55FF07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D92D5721B885CFF04B76B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndoorTrackingAppConsumer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EE5091F24596DE700272D84 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		1EE5093824596DEB00272D84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C582204BF0A35851126D8A6A /* Pods-IndoorTrackingAppConsumer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +374,7 @@
 		};
 		1EE5093924596DEB00272D84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97FD2B17673CBBD8FC092BD7 /* Pods-IndoorTrackingAppConsumer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
