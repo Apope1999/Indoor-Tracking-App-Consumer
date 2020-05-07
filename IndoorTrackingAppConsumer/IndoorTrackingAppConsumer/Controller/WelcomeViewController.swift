@@ -10,21 +10,32 @@ import UIKit
 import Lottie
 
 class WelcomeViewController: UIViewController {
+    var locationManager: LocationManager?
 
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        performSegueWithPermissionCheck(forIdentifier: K.Segues.logOn)
+    }
+    
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        performSegueWithPermissionCheck(forIdentifier: K.Segues.register)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        locationManager = LocationManager()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Navigation
+    func performSegueWithPermissionCheck(forIdentifier segueString: String) {
+        switch locationManager?.requestCurrentLocationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            performSegue(withIdentifier: segueString, sender: self)
+        case .denied, .none, .restricted, .notDetermined:
+            performSegue(withIdentifier: K.Segues.locationConfirmation, sender: self)
+        default:
+            return
+        }
     }
-    */
-
 }

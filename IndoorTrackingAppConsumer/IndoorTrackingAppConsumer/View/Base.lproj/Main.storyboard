@@ -31,7 +31,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qv0-Ol-go1" kind="show" id="8Ts-Pd-au6"/>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4rU-Jy-cUp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-9z-xDE">
@@ -43,7 +43,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="m8A-cs-Avc" kind="show" id="QyB-29-fTZ"/>
+                                    <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LoA-YJ-M1k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,10 +53,14 @@
                     <navigationItem key="navigationItem" id="Qk9-7J-XJJ">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="location.fill" catalog="system" id="nBr-of-BI8">
                             <connections>
-                                <segue destination="Syi-qo-qDV" kind="presentation" id="TwR-Ze-5uF"/>
+                                <segue destination="Syi-qo-qDV" kind="presentation" identifier="locationConfirm" id="TwR-Ze-5uF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="m8A-cs-Avc" kind="show" identifier="register" id="Tk3-D8-Ewh"/>
+                        <segue destination="qv0-Ol-go1" kind="show" identifier="login" id="Fbh-pm-GgM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
