@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22AB245974E900FD445E /* WelcomeViewController.swift */; };
+		1ECA22AE2459853700FD445E /* 19311-reskinned-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */; };
+		1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */; };
+		1ECA22B72459C36F00FD445E /* 4970-unapproved-cross.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA22B62459C36F00FD445E /* 4970-unapproved-cross.json */; };
 		1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5092624596DE700272D84 /* AppDelegate.swift */; };
 		1EE5092924596DE700272D84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5092824596DE700272D84 /* SceneDelegate.swift */; };
-		1EE5092B24596DE700272D84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5092A24596DE700272D84 /* ViewController.swift */; };
 		1EE5092E24596DE700272D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5092C24596DE700272D84 /* Main.storyboard */; };
 		1EE5093024596DEB00272D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5092F24596DEB00272D84 /* Assets.xcassets */; };
 		1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5093124596DEB00272D84 /* LaunchScreen.storyboard */; };
@@ -18,10 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ECA22AB245974E900FD445E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19311-reskinned-checkmark.json"; sourceTree = "<group>"; };
+		1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfirmationViewController.swift; sourceTree = "<group>"; };
+		1ECA22B62459C36F00FD445E /* 4970-unapproved-cross.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4970-unapproved-cross.json"; sourceTree = "<group>"; };
 		1EE5092324596DE700272D84 /* IndoorTrackingAppConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndoorTrackingAppConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE5092624596DE700272D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EE5092824596DE700272D84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1EE5092A24596DE700272D84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1EE5092D24596DE700272D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EE5092F24596DEB00272D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EE5093224596DEB00272D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,8 +56,31 @@
 				C582204BF0A35851126D8A6A /* Pods-IndoorTrackingAppConsumer.debug.xcconfig */,
 				97FD2B17673CBBD8FC092BD7 /* Pods-IndoorTrackingAppConsumer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1ECA22AF2459907C00FD445E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1ECA22B02459908200FD445E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EE5092C24596DE700272D84 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ECA22B12459908C00FD445E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1ECA22AB245974E900FD445E /* WelcomeViewController.swift */,
+				1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1EE5091A24596DE700272D84 = {
@@ -75,14 +104,17 @@
 		1EE5092524596DE700272D84 /* IndoorTrackingAppConsumer */ = {
 			isa = PBXGroup;
 			children = (
+				1ECA22B12459908C00FD445E /* Controller */,
+				1ECA22B02459908200FD445E /* View */,
+				1ECA22AF2459907C00FD445E /* Model */,
 				1EE5092624596DE700272D84 /* AppDelegate.swift */,
 				1EE5092824596DE700272D84 /* SceneDelegate.swift */,
-				1EE5092A24596DE700272D84 /* ViewController.swift */,
-				1EE5092C24596DE700272D84 /* Main.storyboard */,
 				1EE5092F24596DEB00272D84 /* Assets.xcassets */,
 				1EE5093124596DEB00272D84 /* LaunchScreen.storyboard */,
 				1EE5093424596DEB00272D84 /* Info.plist */,
 				1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */,
+				1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */,
+				1ECA22B62459C36F00FD445E /* 4970-unapproved-cross.json */,
 			);
 			path = IndoorTrackingAppConsumer;
 			sourceTree = "<group>";
@@ -156,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */,
+				1ECA22AE2459853700FD445E /* 19311-reskinned-checkmark.json in Resources */,
 				1EE5093B24596F6C00272D84 /* GoogleService-Info.plist in Resources */,
 				1EE5093024596DEB00272D84 /* Assets.xcassets in Resources */,
+				1ECA22B72459C36F00FD445E /* 4970-unapproved-cross.json in Resources */,
 				1EE5092E24596DE700272D84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE5092B24596DE700272D84 /* ViewController.swift in Sources */,
+				1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */,
+				1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */,
 				1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */,
 				1EE5092924596DE700272D84 /* SceneDelegate.swift in Sources */,
 			);
