@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E9BAF0D24645C6400724DC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF0C24645C6400724DC8 /* Constants.swift */; };
 		1E9BAF0F24645EC200724DC8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF0E24645EC200724DC8 /* LocationManager.swift */; };
+		1E9BAF11246549C000724DC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF10246549C000724DC8 /* LoginViewController.swift */; };
+		1E9BAF1324654EFE00724DC8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */; };
 		1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22AB245974E900FD445E /* WelcomeViewController.swift */; };
 		1ECA22AE2459853700FD445E /* 19311-reskinned-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */; };
 		1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		1E9BAF0C24645C6400724DC8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E9BAF0E24645EC200724DC8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		1E9BAF10246549C000724DC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1ECA22AB245974E900FD445E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19311-reskinned-checkmark.json"; sourceTree = "<group>"; };
 		1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			children = (
 				1ECA22AB245974E900FD445E /* WelcomeViewController.swift */,
 				1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */,
+				1E9BAF10246549C000724DC8 /* LoginViewController.swift */,
+				1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9BAF11246549C000724DC8 /* LoginViewController.swift in Sources */,
 				1E9BAF0D24645C6400724DC8 /* Constants.swift in Sources */,
 				1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */,
+				1E9BAF1324654EFE00724DC8 /* RegisterViewController.swift in Sources */,
 				1E9BAF0F24645EC200724DC8 /* LocationManager.swift in Sources */,
 				1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */,
 				1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */,

@@ -14,5 +14,6 @@ struct K {
         static let logOn = "login"
         static let register = "register"
         static let locationConfirmation = "locationConfirm"
+        static let goMainMenu = "mainMenu"
     }
 }
