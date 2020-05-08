@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0FB79C2465CE3600D62AE3 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0FB79B2465CE3600D62AE3 /* ProductManager.swift */; };
 		1E9BAF0D24645C6400724DC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF0C24645C6400724DC8 /* Constants.swift */; };
 		1E9BAF0F24645EC200724DC8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF0E24645EC200724DC8 /* LocationManager.swift */; };
 		1E9BAF11246549C000724DC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF10246549C000724DC8 /* LoginViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0FB79B2465CE3600D62AE3 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		1E9BAF0C24645C6400724DC8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E9BAF0E24645EC200724DC8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1E9BAF10246549C000724DC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1E9BAF202465C22600724DC8 /* Region.swift */,
 				1E9BAF222465C24F00724DC8 /* Shelf.swift */,
 				1E9BAF242465C28000724DC8 /* Product.swift */,
+				1E0FB79B2465CE3600D62AE3 /* ProductManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */,
 				1E9BAF252465C28000724DC8 /* Product.swift in Sources */,
 				1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */,
+				1E0FB79C2465CE3600D62AE3 /* ProductManager.swift in Sources */,
 				1E9BAF1F2465BE7400724DC8 /* ProductDetailsViewController.swift in Sources */,
 				1E9BAF1C2465BCC100724DC8 /* ProductCell.swift in Sources */,
 				1E9BAF212465C22600724DC8 /* Region.swift in Sources */,

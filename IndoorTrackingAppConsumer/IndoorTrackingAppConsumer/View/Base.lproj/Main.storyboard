@@ -283,28 +283,54 @@
                     <navigationItem key="navigationItem" id="zQm-DV-fqW"/>
                     <connections>
                         <outlet property="productTableView" destination="N3A-La-1qM" id="TH7-JY-BuO"/>
-                        <segue destination="DBj-jn-Idz" kind="show" id="XVE-zu-sjX"/>
+                        <segue destination="DBj-jn-Idz" kind="show" identifier="showDetails" id="XVE-zu-sjX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzc-T9-nz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3841" y="-178"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Details View Controller-->
         <scene sceneID="FM1-SR-efr">
             <objects>
-                <viewController id="DBj-jn-Idz" sceneMemberID="viewController">
+                <viewController id="DBj-jn-Idz" customClass="ProductDetailsViewController" customModule="IndoorTrackingAppConsumer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6d-ZO-G3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWj-Yg-Afb">
+                                <rect key="frame" x="0.0" y="88" width="383" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVL-lS-Dvi">
+                                        <rect key="frame" x="20" y="20" width="343" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-v4-khG">
+                                        <rect key="frame" x="20" y="158" width="343" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ysd-Di-YQs"/>
                     </view>
                     <navigationItem key="navigationItem" id="HUt-J2-shJ"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="CVL-lS-Dvi" id="Y2i-bi-0zV"/>
+                        <outlet property="retailPriceLabel" destination="2G3-v4-khG" id="YGw-kk-ycR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmW-Jv-qbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4757" y="-357"/>
+            <point key="canvasLocation" x="4756" y="-357.63546798029557"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="jYN-Vg-mFR">

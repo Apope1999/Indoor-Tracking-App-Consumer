@@ -12,22 +12,41 @@ class ProductDetailsViewController: UIViewController {
     
     var productString: String?
     var productSection: String?
-
+    var product: Product?
+    var productManager = ProductManager()
+    
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var retailPriceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        productManager.delegate = self
+        
+        //self.navigationController?.navigationBar.prefersLargeTitles = false
+
+        if let productSafeString = productString {
+            navigationItem.title = productSafeString
+            productManager.loadProductFromFirebase(withName: productSafeString)
+        }
     }
     
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+}
 
+extension ProductDetailsViewController: ProductManagerDelegate {
+    func didUpdateProductPage(_ beaconManager: ProductManager, product: Product) {
+        descriptionLabel.text = product.description
+        retailPriceLabel.text = "\(product.retailPrice)€"
+    }
+    
+    func didFail() {
+        print("I failed")
+    }
 }
