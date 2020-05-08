@@ -208,6 +208,9 @@
                                         <state key="normal" title="Go to Live View">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="liveViewButtonPressed:" destination="zlV-kD-UGE" eventType="touchUpInside" id="fGv-ug-kqG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,11 +254,57 @@
                         <outlet property="liveViewButton" destination="KF4-MQ-oxo" id="IEe-ME-GDb"/>
                         <outlet property="searchViewButton" destination="9xq-xm-71S" id="bls-ar-v9A"/>
                         <outlet property="topCardView" destination="NBo-Kn-fVC" id="IPT-Xm-IbO"/>
+                        <segue destination="TCS-K8-2S3" kind="show" identifier="goLiveView" id="iws-07-uco"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FB-qN-h5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2986.4000000000001" y="135.96059113300493"/>
+        </scene>
+        <!--Liveview View Controller-->
+        <scene sceneID="LKM-Nr-TQb">
+            <objects>
+                <viewController id="TCS-K8-2S3" customClass="LiveviewViewController" customModule="IndoorTrackingAppConsumer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8O-NA-eWV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N3A-La-1qM">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qwH-Xi-FKo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zQm-DV-fqW"/>
+                    <connections>
+                        <outlet property="productTableView" destination="N3A-La-1qM" id="TH7-JY-BuO"/>
+                        <segue destination="DBj-jn-Idz" kind="show" id="XVE-zu-sjX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzc-T9-nz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3841" y="-178"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FM1-SR-efr">
+            <objects>
+                <viewController id="DBj-jn-Idz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6d-ZO-G3c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ysd-Di-YQs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HUt-J2-shJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EmW-Jv-qbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4757" y="-357"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="jYN-Vg-mFR">
@@ -339,7 +388,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gs3-0C-Gh8"/>
+        <segue reference="KbE-Wb-egn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="115"/>

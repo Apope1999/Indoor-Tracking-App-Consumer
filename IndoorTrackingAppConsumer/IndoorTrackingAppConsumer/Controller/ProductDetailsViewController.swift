@@ -1,5 +1,5 @@
 //
-//  MainMenuViewController.swift
+//  ProductDetailsViewController.swift
 //  IndoorTrackingAppConsumer
 //
 //  Created by Apostolos Pezodromou on 8/5/20.
@@ -8,25 +8,15 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
-
-    @IBOutlet weak var topCardView: UIView!
-    @IBOutlet weak var bottomCardView: UIView!
-    @IBOutlet weak var liveViewButton: UIButton!
-    @IBOutlet weak var searchViewButton: UIButton!
+class ProductDetailsViewController: UIViewController {
     
+    var productString: String?
+    var productSection: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        topCardView.layer.cornerRadius = 10
-        bottomCardView.layer.cornerRadius = 10
-        liveViewButton.layer.cornerRadius = 10
-        searchViewButton.layer.cornerRadius = 10
-    }
-    
-    @IBAction func liveViewButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: K.Segues.goToLiveView, sender: self)
     }
     
 

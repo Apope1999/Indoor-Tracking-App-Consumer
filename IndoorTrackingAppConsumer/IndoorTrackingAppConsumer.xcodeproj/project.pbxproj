@@ -12,6 +12,14 @@
 		1E9BAF11246549C000724DC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF10246549C000724DC8 /* LoginViewController.swift */; };
 		1E9BAF1324654EFE00724DC8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */; };
 		1E9BAF1524656A0000724DC8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1424656A0000724DC8 /* MainMenuViewController.swift */; };
+		1E9BAF1724657BE900724DC8 /* LiveviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1624657BE900724DC8 /* LiveviewViewController.swift */; };
+		1E9BAF1924657D1E00724DC8 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1824657D1E00724DC8 /* BeaconManager.swift */; };
+		1E9BAF1C2465BCC100724DC8 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1A2465BCC100724DC8 /* ProductCell.swift */; };
+		1E9BAF1D2465BCC100724DC8 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1B2465BCC100724DC8 /* ProductCell.xib */; };
+		1E9BAF1F2465BE7400724DC8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF1E2465BE7400724DC8 /* ProductDetailsViewController.swift */; };
+		1E9BAF212465C22600724DC8 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF202465C22600724DC8 /* Region.swift */; };
+		1E9BAF232465C24F00724DC8 /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF222465C24F00724DC8 /* Shelf.swift */; };
+		1E9BAF252465C28000724DC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BAF242465C28000724DC8 /* Product.swift */; };
 		1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22AB245974E900FD445E /* WelcomeViewController.swift */; };
 		1ECA22AE2459853700FD445E /* 19311-reskinned-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */; };
 		1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */; };
@@ -31,6 +39,14 @@
 		1E9BAF10246549C000724DC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1E9BAF1424656A0000724DC8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		1E9BAF1624657BE900724DC8 /* LiveviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveviewViewController.swift; sourceTree = "<group>"; };
+		1E9BAF1824657D1E00724DC8 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		1E9BAF1A2465BCC100724DC8 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		1E9BAF1B2465BCC100724DC8 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		1E9BAF1E2465BE7400724DC8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		1E9BAF202465C22600724DC8 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		1E9BAF222465C24F00724DC8 /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
+		1E9BAF242465C28000724DC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1ECA22AB245974E900FD445E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1ECA22AD2459853700FD445E /* 19311-reskinned-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19311-reskinned-checkmark.json"; sourceTree = "<group>"; };
 		1ECA22B2245990E500FD445E /* LocationConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				1E9BAF0E24645EC200724DC8 /* LocationManager.swift */,
+				1E9BAF1824657D1E00724DC8 /* BeaconManager.swift */,
+				1E9BAF202465C22600724DC8 /* Region.swift */,
+				1E9BAF222465C24F00724DC8 /* Shelf.swift */,
+				1E9BAF242465C28000724DC8 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				1EE5092C24596DE700272D84 /* Main.storyboard */,
+				1E9BAF1A2465BCC100724DC8 /* ProductCell.swift */,
+				1E9BAF1B2465BCC100724DC8 /* ProductCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +115,8 @@
 				1E9BAF10246549C000724DC8 /* LoginViewController.swift */,
 				1E9BAF1224654EFE00724DC8 /* RegisterViewController.swift */,
 				1E9BAF1424656A0000724DC8 /* MainMenuViewController.swift */,
+				1E9BAF1624657BE900724DC8 /* LiveviewViewController.swift */,
+				1E9BAF1E2465BE7400724DC8 /* ProductDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +228,7 @@
 			files = (
 				1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */,
 				1ECA22AE2459853700FD445E /* 19311-reskinned-checkmark.json in Resources */,
+				1E9BAF1D2465BCC100724DC8 /* ProductCell.xib in Resources */,
 				1EE5093B24596F6C00272D84 /* GoogleService-Info.plist in Resources */,
 				1EE5093024596DEB00272D84 /* Assets.xcassets in Resources */,
 				1ECA22B72459C36F00FD445E /* 4970-unapproved-cross.json in Resources */,
@@ -265,9 +290,16 @@
 				1E9BAF0D24645C6400724DC8 /* Constants.swift in Sources */,
 				1ECA22B3245990E500FD445E /* LocationConfirmationViewController.swift in Sources */,
 				1E9BAF1324654EFE00724DC8 /* RegisterViewController.swift in Sources */,
+				1E9BAF1724657BE900724DC8 /* LiveviewViewController.swift in Sources */,
+				1E9BAF232465C24F00724DC8 /* Shelf.swift in Sources */,
 				1E9BAF0F24645EC200724DC8 /* LocationManager.swift in Sources */,
 				1ECA22AC245974E900FD445E /* WelcomeViewController.swift in Sources */,
+				1E9BAF252465C28000724DC8 /* Product.swift in Sources */,
 				1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */,
+				1E9BAF1F2465BE7400724DC8 /* ProductDetailsViewController.swift in Sources */,
+				1E9BAF1C2465BCC100724DC8 /* ProductCell.swift in Sources */,
+				1E9BAF212465C22600724DC8 /* Region.swift in Sources */,
+				1E9BAF1924657D1E00724DC8 /* BeaconManager.swift in Sources */,
 				1EE5092924596DE700272D84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
