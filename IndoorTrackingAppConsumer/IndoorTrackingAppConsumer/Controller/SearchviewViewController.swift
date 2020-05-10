@@ -172,5 +172,11 @@ extension SearchviewViewController: UISearchBarDelegate {
             productTableView.reloadData()
         }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        productTableView.reloadData()
+    }
 }
 
