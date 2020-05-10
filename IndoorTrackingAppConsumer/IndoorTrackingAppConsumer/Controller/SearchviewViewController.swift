@@ -30,10 +30,6 @@ class SearchviewViewController: UIViewController {
         productTableView.register(UINib(nibName: K.Cells.productCell, bundle: nil), forCellReuseIdentifier: K.Cells.productCellID)
         productTableView.delegate = self
         
-        navigationItem.title = "Products"
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        
         beaconManager.delegate = self
     }
     
@@ -45,8 +41,13 @@ class SearchviewViewController: UIViewController {
         beaconManager.requestRegionsWithNoPermission()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.title = "Products"
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
     @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
-        //MARK: - TODO Erase search field
         searching = false
         beaconManager.requestRegionsWithNoPermission()
     }
@@ -55,10 +56,14 @@ class SearchviewViewController: UIViewController {
     //MARK: - TODO!!!
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segues.showDetails {
-            let productVC = segue.destination as! ProductDetailsViewController
-            productVC.productString = selectedProduct
-            productVC.productSection = selectedProductSection
+        if segue.identifier == K.Segues.showTrackingOfProduct {
+//            let productVC = segue.destination as! ProductDetailsViewController
+//            productVC.productString = selectedProduct
+//            productVC.productSection = selectedProductSection
+            
+            let searchVC = segue.destination as! ProductTrackingViewController
+            searchVC.minorMajorArray = beaconManager.getRegion(fromProductName: selectedProduct!)
+            searchVC.productName = selectedProduct
         }
     }
 }
@@ -130,7 +135,7 @@ extension SearchviewViewController: UITableViewDelegate {
         //
         
         selectedProduct = cell?.productLabel.text
-        performSegue(withIdentifier: K.Segues.showDetails, sender: self)
+        performSegue(withIdentifier: K.Segues.showTrackingOfProduct, sender: self)
         cell?.isSelected = false
     }
 }

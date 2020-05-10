@@ -32,6 +32,8 @@
 		1EE5093324596DEB00272D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5093124596DEB00272D84 /* LaunchScreen.storyboard */; };
 		1EE5093B24596F6C00272D84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */; };
 		1EF404E92466F12800970E69 /* SearchviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF404E82466F12800970E69 /* SearchviewViewController.swift */; };
+		1EF404EB2467F3D300970E69 /* ProductTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF404EA2467F3D300970E69 /* ProductTrackingViewController.swift */; };
+		1EF404ED2467F4B600970E69 /* ProductTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF404EC2467F4B600970E69 /* ProductTrackingManager.swift */; };
 		9CCCAF64C6FC3721D8022A0F /* Pods_IndoorTrackingAppConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6735F1FD7934C7440780FB9 /* Pods_IndoorTrackingAppConsumer.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		1EE5093424596DEB00272D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EE5093A24596F6C00272D84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EF404E82466F12800970E69 /* SearchviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchviewViewController.swift; sourceTree = "<group>"; };
+		1EF404EA2467F3D300970E69 /* ProductTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTrackingViewController.swift; sourceTree = "<group>"; };
+		1EF404EC2467F4B600970E69 /* ProductTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTrackingManager.swift; sourceTree = "<group>"; };
 		97FD2B17673CBBD8FC092BD7 /* Pods-IndoorTrackingAppConsumer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingAppConsumer.release.xcconfig"; path = "Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer.release.xcconfig"; sourceTree = "<group>"; };
 		C582204BF0A35851126D8A6A /* Pods-IndoorTrackingAppConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndoorTrackingAppConsumer.debug.xcconfig"; path = "Target Support Files/Pods-IndoorTrackingAppConsumer/Pods-IndoorTrackingAppConsumer.debug.xcconfig"; sourceTree = "<group>"; };
 		C6735F1FD7934C7440780FB9 /* Pods_IndoorTrackingAppConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndoorTrackingAppConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,7 @@
 				1E9BAF222465C24F00724DC8 /* Shelf.swift */,
 				1E9BAF242465C28000724DC8 /* Product.swift */,
 				1E0FB79B2465CE3600D62AE3 /* ProductManager.swift */,
+				1EF404EC2467F4B600970E69 /* ProductTrackingManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				1E9BAF1624657BE900724DC8 /* LiveviewViewController.swift */,
 				1E9BAF1E2465BE7400724DC8 /* ProductDetailsViewController.swift */,
 				1EF404E82466F12800970E69 /* SearchviewViewController.swift */,
+				1EF404EA2467F3D300970E69 /* ProductTrackingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,6 +310,8 @@
 				1EE5092724596DE700272D84 /* AppDelegate.swift in Sources */,
 				1E0FB79C2465CE3600D62AE3 /* ProductManager.swift in Sources */,
 				1E9BAF1F2465BE7400724DC8 /* ProductDetailsViewController.swift in Sources */,
+				1EF404EB2467F3D300970E69 /* ProductTrackingViewController.swift in Sources */,
+				1EF404ED2467F4B600970E69 /* ProductTrackingManager.swift in Sources */,
 				1E9BAF1C2465BCC100724DC8 /* ProductCell.swift in Sources */,
 				1E9BAF212465C22600724DC8 /* Region.swift in Sources */,
 				1E9BAF1924657D1E00724DC8 /* BeaconManager.swift in Sources */,

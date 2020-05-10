@@ -18,6 +18,7 @@ struct K {
         static let goToLiveView = "goLiveView"
         static let goToSearchView = "goSearchView"
         static let showDetails = "showDetails"
+        static let showTrackingOfProduct = "showTrackingOfProduct"
     }
     
     struct Cells {

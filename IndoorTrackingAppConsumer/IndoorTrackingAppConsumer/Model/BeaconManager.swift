@@ -170,6 +170,37 @@ extension BeaconManager {
     }
 }
 
+extension BeaconManager {
+    func getRegion(fromProductName searchProduct: String) -> [UInt16]? {
+        var foundShelf: Shelf?
+        outerLoop: for shelf in shelves {
+            for product in shelf.products {
+                if product == searchProduct {
+                    foundShelf = shelf
+                    break outerLoop
+                }
+            }
+        }
+        
+        guard let safeShelf = foundShelf else { return nil }
+        var foundRegion: Region?
+        outerLoop: for region in regions {
+            for shelf in region.shelves {
+                if shelf == safeShelf.id {
+                    foundRegion = region
+                    break outerLoop
+                }
+            }
+        }
+        
+        guard let safeRegion = foundRegion else { return nil }
+        var minorMajorArray: [UInt16] = []
+        minorMajorArray.append(safeRegion.minor)
+        minorMajorArray.append(safeRegion.major)
+        return minorMajorArray
+    }
+}
+
 //MARK: - Deprecated Methods
 extension BeaconManager {
     func loadRegionsFromFirebase() {
