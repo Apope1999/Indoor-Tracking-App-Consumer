@@ -29,7 +29,10 @@ class MainMenuViewController: UIViewController {
         performSegue(withIdentifier: K.Segues.goToLiveView, sender: self)
     }
     
-
+    @IBAction func searchViewButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Segues.goToSearchView, sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

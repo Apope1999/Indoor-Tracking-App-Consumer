@@ -1,26 +1,26 @@
 //
-//  LiveviewViewController.swift
+//  SearchviewViewController.swift
 //  IndoorTrackingAppConsumer
 //
-//  Created by Apostolos Pezodromou on 8/5/20.
+//  Created by Apostolos Pezodromou on 9/5/20.
 //  Copyright © 2020 Apostolos Pezodromou. All rights reserved.
 //
 
 import UIKit
-import CoreLocation
 import Firebase
 
-
-class LiveviewViewController: UIViewController {
+class SearchviewViewController: UIViewController {
     
     @IBOutlet weak var productTableView: UITableView!
     
     var selectedProduct: String?
     var selectedProductSection: String?
-    let locationManager = CLLocationManager()
     var beaconManager = BeaconManager()
     var regionListener: ListenerRegistration?
     var shelvesListener: ListenerRegistration?
+    
+    var searchProducts = [String]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,43 +32,27 @@ class LiveviewViewController: UIViewController {
         
         navigationItem.title = "Products"
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         
-        locationManager.requestAlwaysAuthorization()
-        
-        locationManager.delegate = self
         beaconManager.delegate = self
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         regionListener = beaconManager.loadRegionsFromFirebaseListener()
         shelvesListener = beaconManager.loadShelvesFromFirebaseListener()
         
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined, .restricted, .denied:
-            beaconManager.requestRegionsWithNoPermission()
-        case .authorizedAlways, .authorizedWhenInUse:
-            beaconManager.liveMode = true
-            startRanging(beaconManager)
-        @unknown default:
-            break
-        }
-        
-        productTableView.reloadData()
+        beaconManager.liveMode = false
+        beaconManager.requestRegionsWithNoPermission()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        //regionListener?.remove()
-        //shelvesListener?.remove()
-        
-        if let safeRegionConstraints = beaconManager.regionConstraint {
-            locationManager.stopRangingBeacons(satisfying: safeRegionConstraints)
-        }
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        //MARK: - TODO Erase search field
+        searching = false
+        beaconManager.requestRegionsWithNoPermission()
     }
     
     // MARK: - Navigation
-    
+    //MARK: - TODO!!!
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segues.showDetails {
@@ -80,22 +64,37 @@ class LiveviewViewController: UIViewController {
 }
 
 //MARK: - Table View Data Source
-extension LiveviewViewController: UITableViewDataSource {
+extension SearchviewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let shelfName = beaconManager.closestShelves[section]
         let shelf = beaconManager.shelves.first(where: {$0.id == shelfName})
-        return shelf?.products.count ?? 0
+        
+        if searching {
+            return searchProducts.count
+           
+        } else {
+            return shelf?.products.count ?? 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return beaconManager.closestShelves.count
+        if searching {
+            return 1
+        } else {
+            return beaconManager.closestShelves.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UITableViewHeaderFooterView()
-        view.textLabel?.text = "\(beaconManager.closestShelves[section])"
         view.textLabel?.textColor = UIColor.white
         view.tintColor = UIColor.systemOrange
+        if searching {
+            view.textLabel?.text = "Results"
+        } else {
+            view.textLabel?.text = "\(beaconManager.closestShelves[section])"
+        }
         return view
     }
     
@@ -105,14 +104,23 @@ extension LiveviewViewController: UITableViewDataSource {
         let shelfName = beaconManager.closestShelves[indexPath.section]
         let shelf = beaconManager.shelves.first(where: {$0.id == shelfName})
         
-        cell.productLabel.text = "\(shelf!.products[indexPath.row])"
-        
+        if searching {
+            cell.productLabel.text = searchProducts[indexPath.row]
+        } else {
+            cell.productLabel.text = "\(shelf!.products[indexPath.row])"
+        }
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+    
+    
 }
 
 //MARK: - Table View Delegate
-extension LiveviewViewController: UITableViewDelegate {
+extension SearchviewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? ProductCell
         
@@ -127,48 +135,42 @@ extension LiveviewViewController: UITableViewDelegate {
     }
 }
 
-//MARK: - Location & Beacon Manager Delegate
-extension LiveviewViewController: CLLocationManagerDelegate, BeaconManagerDelegate {
-    func didToggleLiveMode(_ beaconManager: BeaconManager, liveMode: Bool) {
-        return
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {
-        let knownBeacons = beacons.filter({$0.proximity != CLProximity.unknown})
-        if knownBeacons.count > 0 {
-            var closeBeacons: [CLBeacon] = []
-            for beacon in knownBeacons {
-                if 0.0...5.0 ~= beacon.accuracy {
-                    closeBeacons.append(beacon)
-                }
-            }
-            beaconManager.updateRegionOrder(regions: closeBeacons)
-        }
-    }
+extension SearchviewViewController: BeaconManagerDelegate {
     
     func didUpdateRegions(_ beaconManager: BeaconManager, regions: [String]) {
         productTableView.reloadData()
     }
     
     func startRanging(_ beaconManager: BeaconManager) {
-        if let safeRegionConstraints = beaconManager.regionConstraint {
-            locationManager.startRangingBeacons(satisfying: safeRegionConstraints)
-        }
+        return
     }
     
     func stopRanging(_ beaconManager: BeaconManager) {
-        if let safeRegionConstraints = beaconManager.regionConstraint {
-            locationManager.stopRangingBeacons(satisfying: safeRegionConstraints)
-        }
+        return
     }
     
     func didDeleteProduct(_ beaconManager: BeaconManager) {
         productTableView.reloadData()
     }
     
+    func didToggleLiveMode(_ beaconManager: BeaconManager, liveMode: Bool) {
+        return
+    }
+    
     func didFail() {
         print("I failed")
+    }
+}
+
+extension SearchviewViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchProducts.removeAll()
+        for shelf in beaconManager.shelves {
+            let products = shelf.products
+            searchProducts.append(contentsOf: products.filter({$0.prefix(searchText.count) == searchText}))
+            searching = true
+            productTableView.reloadData()
+        }
     }
 }
 

@@ -16,6 +16,7 @@ struct K {
         static let locationConfirmation = "locationConfirm"
         static let goMainMenu = "mainMenu"
         static let goToLiveView = "goLiveView"
+        static let goToSearchView = "goSearchView"
         static let showDetails = "showDetails"
     }
     
